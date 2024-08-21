@@ -1,0 +1,28 @@
+import = [
+  "~/.config/alacritty/themes/themes/tokyo-night.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+[font]
+size = 16
+normal = {family = "JetBrainsMono Nerd Font", style = "Regular"}
+italic = {family = "JetBrainsMono Nerd Font", style = "Italic"}
+bold = {family = "JetBrainsMono Nerd Font", style = "Bold"}
+
+[mouse]
+hide_when_typing = true
+bindings = [{action = "PasteSelection", mouse = "Middle"}]
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+option_as_alt = "Both"
+dimensions = {columns = 160, lines = 80}
+# dynamic_padding = true
