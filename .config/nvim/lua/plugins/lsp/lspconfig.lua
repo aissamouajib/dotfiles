@@ -80,6 +80,27 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
+		-- Dart LSP
+		lspconfig.dartls.setup({
+			capabilities = capabilities,
+			cmd = { "dart", "language-server", "--protocol=lsp" },
+			filetypes = { "dart" },
+			init_options = {
+				closingLabels = true,
+				flutterOutline = true,
+				onlyAnalyzeProjectsWithOpenFiles = true,
+				outline = true,
+				suggestFromUnimportedLibraries = true,
+			},
+			-- root_dir = root_pattern("pubspec.yaml"),
+			settings = {
+				dart = {
+					completeFunctionCalls = true,
+					showTodos = true,
+				},
+			},
+		})
+
 		mason_lspconfig.setup_handlers({
 			-- default handler for installed servers
 			function(server_name)
